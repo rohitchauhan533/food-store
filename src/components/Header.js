@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import useStyles from "./food.styles";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const classes = useStyles();
 
   const [btnNameReact, setBtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
+
+  const {loggedInUser}  = useContext(UserContext);
 
   return (
     <div
@@ -51,6 +54,8 @@ const Header = () => {
           >
             {btnNameReact}
           </button>
+          <li>{loggedInUser}</li>
+
         </ul>
       </div>
     </div>

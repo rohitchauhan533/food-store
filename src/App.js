@@ -1,6 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
+import UserContext from './utils/UserContext';
+import { useEffect, useState } from 'react';
 
 
 
@@ -18,12 +20,25 @@ import Header from './components/Header';
 
 function App() {
 
+  const [userInfo, setUserInfo] = useState()
+
+  useEffect(()=> {
+    const data = {
+      name: "Akshay Saini"
+    };
+
+    setUserInfo(data.name)
+  },[])
+
   
   return (
+    <UserContext.Provider value={{loggedInUser: userInfo}}>
     <div className="App">
     <Header/>
     <Outlet/>
     </div>
+    </UserContext.Provider>
+
   );
 }
 
