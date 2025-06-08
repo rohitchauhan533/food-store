@@ -3,6 +3,7 @@ import useStyles from "./food.styles";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const classes = useStyles();
@@ -12,7 +13,11 @@ const Header = () => {
 
   const {loggedInUser}  = useContext(UserContext);
 
-  return (
+  // Subscribing to the store using selector
+
+  const cartItems = useSelector((store) => store.cart.items)
+
+  return ( 
     <div
       className="header_container"
       style={{
@@ -43,7 +48,8 @@ const Header = () => {
           <Link to="/grocery">Grocery</Link>
           </li>
 
-          <li>Cart</li>
+          <li>
+          <Link to="/cart">Cart- ({cartItems.length} items)</Link></li>
           <button
             className={classes.loginBtn}
             onClick={() => {

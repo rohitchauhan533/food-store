@@ -3,6 +3,8 @@ import './App.css';
 import Header from './components/Header';
 import UserContext from './utils/UserContext';
 import { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
 
 
 
@@ -32,12 +34,15 @@ function App() {
 
   
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser: userInfo}}>
     <div className="App">
     <Header/>
     <Outlet/>
     </div>
     </UserContext.Provider>
+    </Provider>
+
 
   );
 }

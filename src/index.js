@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Body from './components/Body';
 import RestaurantMenu from './components/RestaurantMenu';
 import Shimmer from './components/Shimmer';
+import Cart from './components/Cart';
 
 
 
@@ -40,7 +41,12 @@ const appRouter = createBrowserRouter(
         {
           path: "/restaurants/:resId",
           element: <RestaurantMenu />
+        },
+        {
+          path: "/cart",
+          element: <Cart />
         }
+        
 
       ]
     }

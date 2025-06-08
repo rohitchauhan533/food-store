@@ -40,7 +40,7 @@ const RestaurantMenu = () => {
         <ResCategories
           key={category?.card?.card.title}
           data={category?.card?.card}
-          showItems = {false}
+          showItems = {true}
         />
       ))}
     </Grid>
