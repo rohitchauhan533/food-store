@@ -73,7 +73,7 @@ const Body = () => {
           Top Rated Restaurant
         </button>
       </div>
-      <div className="res-container">
+      <div className={classes.resContainer}>
         {filteredRestaurant.map((restaurant) => (
           <Link to= {"/restaurants/" + restaurant?.info?.id}>
             <RestaurantCard

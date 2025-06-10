@@ -32,7 +32,6 @@ const RestaurantMenu = () => {
     <Grid className={classes.menu}>
       <h1 style={{ fontWeight: "700", fontSize: "40px" }}>{name}</h1>
       <h2>{cuisines.join(", ")}</h2>
-      <h2>{costForTwoMessage}</h2>
 
       {/* categories accordion */}
 
