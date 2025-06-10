@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
 import useStyles from './food.styles';
+import { CDN_URL } from '../utils/constants';
 
 
 const RestaurantCard = (props) => {
@@ -8,8 +9,10 @@ const RestaurantCard = (props) => {
     const classes = useStyles()
 
     const {resData} = props;
+    console.log(resData, "resData in restaurant card")
 
     const {
+      cloudinaryImageId,
         name,
         avgRating,
         cuisines,
@@ -19,7 +22,8 @@ const RestaurantCard = (props) => {
 
   return (
     <Grid  className= {classes.mainCardContainer}>
-    <img src='' alt='res-logo'/>
+    <img src={CDN_URL + cloudinaryImageId} className={classes.resLogo}
+    alt='res-logo'/>
     <h3>{name}</h3>
     <h4>{cuisines}</h4>
     <h4>{avgRating}</h4>
