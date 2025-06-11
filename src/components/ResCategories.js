@@ -9,7 +9,7 @@ const ResCategories = ({data, showItems, setShowIndex}) => {
 
     const handleClick = () => {
         console.log("clicked")
-        setShowIndex(prevIndex => !prevIndex)
+        setShowIndex()
         // setShowItems(!showItems)
 
     }

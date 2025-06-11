@@ -41,8 +41,12 @@ const RestaurantMenu = () => {
         <ResCategories
           key={category?.card?.card.title}
           data={category?.card?.card}
-          showItems={index === showIndex ? true : false}
-          setShowIndex={() => setShowIndex(index)}
+          // showItems={index === showIndex ? true : false}
+          // setShowIndex={() => setShowIndex(index)}
+          showItems={showIndex === index}
+          setShowIndex={() =>
+            setShowIndex(showIndex === index ? null : index)
+          }
         />
       ))}
     </Grid>
