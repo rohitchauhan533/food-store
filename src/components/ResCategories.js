@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import useStyles from './food.styles'
 import ItemList from './ItemList'
 
-const ResCategories = ({data, showItems}) => {
+const ResCategories = ({data, showItems, setShowIndex}) => {
 
     // const [showItems, setShowItems] = useState(false)
 
     const handleClick = () => {
         console.log("clicked")
+        setShowIndex(prevIndex => !prevIndex)
         // setShowItems(!showItems)
 
     }

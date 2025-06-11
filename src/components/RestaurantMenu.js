@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useStyles from "./food.styles";
 import { Grid } from "@mui/material";
 import Shimmer from "./Shimmer";
@@ -12,6 +12,8 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const resInfo = useRestaurantMenu(resId);
+
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -35,11 +37,12 @@ const RestaurantMenu = () => {
 
       {/* categories accordion */}
 
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <ResCategories
           key={category?.card?.card.title}
           data={category?.card?.card}
-          showItems = {true}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
         />
       ))}
     </Grid>
