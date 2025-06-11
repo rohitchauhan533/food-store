@@ -17,7 +17,7 @@ const ResCategories = ({data, showItems, setShowIndex}) => {
 
   const classes = useStyles()
   return (
-    <Grid>
+    <Grid style= {{width: "72rem"}}>
     <Grid className= {classes.categoryAccordion} onClick={handleClick}>
      <Grid className = "accordioncard" style={{display: "flex" , gap: "50px", width: "70rem", justifyContent: "space-between" }}>
     {data.title} ({data.itemCards.length})
